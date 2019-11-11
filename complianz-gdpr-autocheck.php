@@ -5,7 +5,7 @@
  * Description: Complianz Autocheck checks your categories by default. NOT COMPLIANT!
  * Version: 1.0.0
  * Text Domain: complianz-gdpr
- * Domain Path: /pro/languages
+ * Domain Path: languages
  * Author: Complianz team
  * Author URI: https://complianz.io
  */
@@ -20,7 +20,7 @@ function cmplz_autocheck_init(){
 
 function cmplz_autocheck_enqueue_assets( $hook ) {
 	$minified = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script( 'wp-consent-api', plugin_dir_url(__FILE__) . "autocheck$minified.js", array('jquery'), cmplz_autocheck_version, true );
+	wp_enqueue_script( 'complianz-gdpr-autocheck', plugin_dir_url(__FILE__) . "autocheck$minified.js", array('jquery'), cmplz_autocheck_version, true );
 
 }
 

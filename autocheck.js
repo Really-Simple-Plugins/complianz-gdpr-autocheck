@@ -1,10 +1,9 @@
 jQuery(document).ready(function ($) {
     'use strict';
 
-
     //to hook into the event that fires when the scripts are enabled, use script like this:
-    $(document).on("cmplzCookieWarningLoaded", myScriptHandler);
-    function myScriptHandler() {
+    $(document).on("cmplzCookieWarningLoaded", cmplz_autocheck);
+    function cmplz_autocheck() {
         //tag manager
         if (complianz.tm_categories) {
             for (var i = 0; i < complianz.cat_num; i++) {
@@ -13,6 +12,8 @@ jQuery(document).ready(function ($) {
         }
         if (cmplzGetCookie('cmplz_all') !== false) $('#cmplz_all').prop('checked', true);
         if (cmplzGetCookie('cmplz_stats') !== false) $('#cmplz_stats').prop('checked', true);
+
+
     }
 
     function cmplzGetCookie(cname) {
@@ -30,6 +31,8 @@ jQuery(document).ready(function ($) {
         //If we get to this point, that means the cookie wasn't found, we return an empty string.
         return "";
     }
+
+
 
 
 });
