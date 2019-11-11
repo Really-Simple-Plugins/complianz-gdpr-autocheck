@@ -10,12 +10,9 @@
  * Author URI: https://complianz.io
  */
 
-add_action('plugins_loaded','cmplz_autocheck_init',9);
-function cmplz_autocheck_init(){
-	$plugin_data = get_plugin_data(__FILE__);
-	$debug = (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? time() : '';
-	define('cmplz_autocheck_version', $plugin_data['Version'] . $debug);
-}
+
+	define('cmplz_autocheck_version', '1');
+
 
 
 function cmplz_autocheck_enqueue_assets( $hook ) {
