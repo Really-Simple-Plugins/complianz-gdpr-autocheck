@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Complianz GDPR autocheck
+ * Plugin Name: Complianz Pre-Checked Categories
  * Plugin URI: https://complianz.io/pricing
- * Description: Complianz Autocheck checks your categories by default. NOT COMPLIANT!
+ * Description: Autocheck checks your categories by default. NOT COMPLIANT! [Read more](https://complianz.io/pre-checked-categories-why-not/)
  * Version: 1.0.0
  * Text Domain: complianz-gdpr
  * Domain Path: languages
- * Author: Complianz team
+ * Author: Complianz.io
  * Author URI: https://complianz.io
  */
 
