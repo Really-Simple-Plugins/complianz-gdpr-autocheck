@@ -4,16 +4,17 @@ jQuery(document).ready(function ($) {
     //to hook into the event that fires when the scripts are enabled, use script like this:
     $(document).on("cmplzCookieWarningLoaded", cmplz_autocheck);
     function cmplz_autocheck() {
-        console.log(cmplzGetCookie('cmplz_all'));
-
         //tag manager
         if (complianz.tm_categories) {
             for (var i = 0; i < complianz.cat_num; i++) {
                 if (cmplzGetCookie('cmplz_event_' + i) !== false) $('#cmplz_' + i).prop('checked', true);
             }
         }
-        if (cmplzGetCookie('cmplz_all') === '') $('#cmplz_all').prop('checked', true);
-        if (cmplzGetCookie('cmplz_stats') === '') $('#cmplz_stats').prop('checked', true);
+        if (cmplzGetCookie('cmplz_marketing') === '') {
+            $('.cmplz_marketing').prop('checked', true);
+        }
+        if (cmplzGetCookie('cmplz_stats') === '') $('.cmplz_stats').prop('checked', true);
+        if (cmplzGetCookie('cmplz_prefs') === '') $('.cmplz_prefs').prop('checked', true);
     }
 
     function cmplzGetCookie(cname) {

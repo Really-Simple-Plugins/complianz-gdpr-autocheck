@@ -23,7 +23,8 @@ THIS SOLUTION IS NOT GDPR COMPLIANT AND CAN CAUSE CLAIMS AND FINES
 == Frequently Asked Questions ==
 
 == Change log ==
-
+= 1.0.1 =
+* Updated to >4.0 categories and classes
 = 1.0.0 =
 
 == Upgrade notice ==
