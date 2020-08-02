@@ -3,7 +3,7 @@
  * Plugin Name: Complianz Pre-Checked Categories
  * Plugin URI: https://complianz.io/pricing
  * Description: Autocheck checks your categories by default. NOT COMPLIANT!
- * Version: 1.0.1
+ * Version: 1.0.2
  * Text Domain: complianz-gdpr
  * Domain Path: languages
  * Author: Complianz.io
