@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
         //tag manager
         if (complianz.tm_categories) {
             for (var i = 0; i < complianz.cat_num; i++) {
-                if (cmplzGetCookie('cmplz_event_' + i) !== false) $('#cmplz_' + i).prop('checked', true);
+                if (cmplzGetCookie('cmplz_event_' + i) !== false) $('.cmplz_' + i).prop('checked', true);
             }
         }
         if (cmplzGetCookie('cmplz_marketing') === '') {
