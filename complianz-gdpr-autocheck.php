@@ -11,13 +11,12 @@
  */
 
 
-	define('cmplz_autocheck_version', '1');
-
+define('cmplz_autocheck_version', '1.0.2');
 
 
 function cmplz_autocheck_enqueue_assets( $hook ) {
 	$minified = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script( 'complianz-gdpr-autocheck', plugin_dir_url(__FILE__) . "autocheck$minified.js", array('jquery'), cmplz_autocheck_version, true );
+	wp_enqueue_script( 'complianz-gdpr-autocheck', plugin_dir_url(__FILE__) . "autocheck$minified.js", array('jquery', 'cmplz-cookie-config'), cmplz_autocheck_version, true );
 
 }
 
