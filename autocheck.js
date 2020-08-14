@@ -1,8 +1,13 @@
 jQuery(document).ready(function ($) {
     'use strict';
-
     //to hook into the event that fires when the scripts are enabled, use script like this:
-    $(document).on("cmplzCookieWarningLoaded", cmplz_autocheck);
+    $(document).on("cmplzCookieWarningLoaded", cmplz_autocheck_delayed);
+
+    //for some reason the delay is needed for the autocheck to work.
+    function cmplz_autocheck_delayed(){
+        setTimeout(cmplz_autocheck, 1000);
+    }
+
     function cmplz_autocheck() {
         //tag manager
         if (complianz.tm_categories) {
@@ -10,11 +15,18 @@ jQuery(document).ready(function ($) {
                 if (cmplzGetCookie('cmplz_event_' + i) !== false) $('.cmplz_' + i).prop('checked', true);
             }
         }
+
         if (cmplzGetCookie('cmplz_marketing') === '') {
             $('.cmplz_marketing').prop('checked', true);
         }
-        if (cmplzGetCookie('cmplz_stats') === '') $('.cmplz_stats').prop('checked', true);
-        if (cmplzGetCookie('cmplz_prefs') === '') $('.cmplz_prefs').prop('checked', true);
+
+        if (cmplzGetCookie('cmplz_stats') === '') {
+            $('.cmplz_stats').prop('checked', true);
+        }
+
+        if (cmplzGetCookie('cmplz_prefs') === '') {
+            $('.cmplz_prefs').prop('checked', true);
+        }
     }
 
     function cmplzGetCookie(cname) {

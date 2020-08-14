@@ -10,13 +10,16 @@
  * Author URI: https://complianz.io
  */
 
-
-define('cmplz_autocheck_version', '1.0.2');
+$version = '1.0.2';
+if (defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ){
+	$version .= time();
+}
+define('cmplz_autocheck_version', $version);
 
 
 function cmplz_autocheck_enqueue_assets( $hook ) {
 	$minified = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script( 'complianz-gdpr-autocheck', plugin_dir_url(__FILE__) . "autocheck$minified.js", array('jquery', 'cmplz-cookie-config'), cmplz_autocheck_version, true );
+	wp_enqueue_script( 'complianz-gdpr-autocheck', plugin_dir_url(__FILE__) . "autocheck$minified.js", array('jquery'), cmplz_autocheck_version, true );
 
 }
 
@@ -43,9 +46,8 @@ function cmplz_autocheck_warnings($warnings)
 add_filter('cmplz_warnings_types',  'cmplz_autocheck_filter_warnings');
 function cmplz_autocheck_filter_warnings($warnings)
 {
-
-
-	$warnings['autocheck-not-compliant']['label_error'] = __('Automatically checking cagories is not GPDR compliant and can cause fines and or claims. Please check with your lawyer', 'complianz-gdpr');
+	$warnings['autocheck-not-compliant']['label_error'] = __('Automatically checking categories is not GPDR compliant and can cause fines and or claims. Please check with your lawyer', 'complianz-gdpr');
+	$warnings['autocheck-not-compliant']['type'] = 'general';
 
 	return $warnings;
 }
