@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
 
     //for some reason the delay is needed for the autocheck to work.
     function cmplz_autocheck_delayed(){
-        setTimeout(cmplz_autocheck, 1000);
+        setTimeout(cmplz_autocheck, 500);
     }
 
     function cmplz_autocheck() {
