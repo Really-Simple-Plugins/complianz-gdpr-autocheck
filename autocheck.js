@@ -20,12 +20,12 @@ jQuery(document).ready(function ($) {
             $('.cmplz_marketing').prop('checked', true);
         }
 
-        if (cmplzGetCookie('cmplz_stats') === '') {
-            $('.cmplz_stats').prop('checked', true);
+        if (cmplzGetCookie('cmplz_statistics') === '') {
+            $('.cmplz_statistics').prop('checked', true);
         }
 
-        if (cmplzGetCookie('cmplz_prefs') === '') {
-            $('.cmplz_prefs').prop('checked', true);
+        if (cmplzGetCookie('cmplz_preferences') === '') {
+            $('.cmplz_preferences').prop('checked', true);
         }
     }
 
