@@ -5,7 +5,7 @@ Requires at least: 4.7
 License: GPL2
 Requires PHP: 5.6
 Tested up to: 5.3
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 Complianz Autocheck checks your categories by default.
 THIS SOLUTION IS NOT GDPR COMPLIANT AND CAN CAUSE CLAIMS AND FINES
