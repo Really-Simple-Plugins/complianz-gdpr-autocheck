@@ -1,33 +1,24 @@
-jQuery(document).ready(function ($) {
     'use strict';
     //to hook into the event that fires when the scripts are enabled, use script like this:
-    $(document).on("cmplzCookieWarningLoaded", cmplz_autocheck_delayed);
-
-    //for some reason the delay is needed for the autocheck to work.
-    function cmplz_autocheck_delayed(){
-        setTimeout(cmplz_autocheck, 500);
-    }
-
-    function cmplz_autocheck() {
-        //tag manager
-        if (complianz.tm_categories) {
-            for (var i = 0; i < complianz.cat_num; i++) {
-                if (cmplzGetCookie('cmplz_event_' + i) !== false) $('.cmplz_' + i).prop('checked', true);
-            }
-        }
-
+    document.addEventListener("cmplz_cookie_warning_loaded", function() {
         if (cmplzGetCookie('cmplz_marketing') === '') {
-            $('.cmplz_marketing').prop('checked', true);
+            document.querySelectorAll('input.cmplz-marketing').forEach(obj => {
+                obj.checked = true;
+            });
         }
 
         if (cmplzGetCookie('cmplz_statistics') === '') {
-            $('.cmplz_statistics').prop('checked', true);
+            document.querySelectorAll('input.cmplz-statistics').forEach(obj => {
+                obj.checked = true;
+            });
         }
 
         if (cmplzGetCookie('cmplz_preferences') === '') {
-            $('.cmplz_preferences').prop('checked', true);
+            document.querySelectorAll('input.cmplz-preferences').forEach(obj => {
+                obj.checked = true;
+            });
         }
-    }
+    });
 
     function cmplzGetCookie(cname) {
         var name = cname + "="; //Create the cookie name variable with cookie name concatenate with = sign
@@ -44,8 +35,3 @@ jQuery(document).ready(function ($) {
         //If we get to this point, that means the cookie wasn't found, we return an empty string.
         return "";
     }
-
-
-
-
-});

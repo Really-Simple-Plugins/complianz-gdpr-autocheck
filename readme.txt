@@ -4,8 +4,9 @@ Tags: GDPR, CCPA, AVG, E-Privacy
 Requires at least: 4.7
 License: GPL2
 Requires PHP: 5.6
+Requires Complianz GDPR version 6.0
 Tested up to: 5.3
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 Complianz Autocheck checks your categories by default.
 THIS SOLUTION IS NOT GDPR COMPLIANT AND CAN CAUSE CLAIMS AND FINES
@@ -23,6 +24,9 @@ THIS SOLUTION IS NOT GDPR COMPLIANT AND CAN CAUSE CLAIMS AND FINES
 == Frequently Asked Questions ==
 
 == Change log ==
+= 1.0.4 =
+* 6.0 compatibility
+
 = 1.0.2 =
 * Updated Tag Manager custom categories to >4.0 categories and classes
 
