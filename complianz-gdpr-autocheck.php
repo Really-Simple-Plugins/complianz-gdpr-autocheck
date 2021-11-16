@@ -19,7 +19,7 @@ define('cmplz_autocheck_version', $version);
 
 function cmplz_autocheck_enqueue_assets( $hook ) {
 	$minified = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script( 'complianz-gdpr-autocheck', plugin_dir_url(__FILE__) . "autocheck$minified.js", array('jquery'), cmplz_autocheck_version, true );
+	wp_enqueue_script( 'complianz-gdpr-autocheck', plugin_dir_url(__FILE__) . "autocheck$minified.js", array(), cmplz_autocheck_version, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'cmplz_autocheck_enqueue_assets', 5);
